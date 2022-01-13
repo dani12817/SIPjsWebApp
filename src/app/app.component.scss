@@ -1,0 +1,179 @@
+ :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.appContainer {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: relative;
+
+    .topbarContainer, .sidebarContainer, .routerOutletContainer, .callContainer {
+        display: block;
+        position: absolute;
+    }
+    
+    .topbarContainer {
+        display: flex;
+        width: calc(100vw - 68px);
+        height: 68px;
+        top: 0;
+        left: 68px;
+        border-bottom: 1px solid lightgray;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        .topbarTitle {
+            margin: auto 1rem;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    }
+
+    .sidebarContainer {
+        width: 68px;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        border-right: 1px solid lightgray;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        .noAvatarContainer,
+        .avatarImage {
+            width: 52px;
+            height: 52px;
+            margin: 0.5rem auto;
+        }
+
+        .noAvatarContainer {
+            background-color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+
+            span {
+                font-weight: bold;
+                font-size: 16px;
+                color: white;
+                margin: auto;
+            }
+        }
+
+        .sideMenuItemsList {
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 68px);
+            padding-top: 0 !important;
+            
+            .mat-list-item {
+                text-decoration: none;
+                cursor: pointer;
+
+                ::ng-deep.mat-list-item-content {
+                    padding: 0 !important;
+                }
+                
+                mat-icon {
+                    $icon-size: 32px;
+                    font-size: $icon-size;
+                    width: $icon-size;
+                    height: $icon-size;
+                    margin: 0 auto;
+                }
+            }
+
+            .mat-list-item:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+
+            .mat-list-item.selected {
+                border-left: solid 8px var(--color-primary);
+        
+                mat-icon {
+                    color: var(--color-primary);
+                }
+            }
+
+            .logOutItem {
+                margin-top: auto;
+            }
+        
+            /*.mat-list-item.selected {
+                border-left: solid 8px var(--color-primary);
+        
+                mat-icon {
+                    color: var(--color-primary);
+                }
+            }
+        
+            .mat-list-item {
+                width: 100%;
+                --min-height: 80px;
+                --inner-border-width: 0;
+                --padding-start: 0;
+                --padding-end: 0;
+                --inner-padding-end: 0;
+            
+                mat-icon {
+                    $icon-size: 32px;
+                    font-size: $icon-size;
+                    width: $icon-size;
+                    height: $icon-size;
+                    //color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54);
+                    margin: auto;
+                }
+            }*/
+        }
+    }
+
+    .routerOutletContainer {
+        background-color: sandybrown;
+        width: 360px;
+        height: calc(100vh - 68px);
+        top: 68px;
+        left: 68px;
+    }
+
+    .callContainer {
+        background-color: palevioletred;
+        width: calc(100vw - 68px - 360px);
+        height: calc(100vh - 68px);
+        top: 68px;
+        left: calc(68px + 360px);
+    }
+}
+
+
+/* Responsive Styles */
+
+@media screen and (max-width: 767px) {
+    .card-container>*:not(.circle-link),
+    .terminal {
+        width: 100%;
+    }
+    .card:not(.highlight-card) {
+        height: 16px;
+        margin: 8px 0;
+    }
+    .card.highlight-card span {
+        margin-left: 72px;
+    }
+    svg#rocket-smoke {
+        right: 120px;
+        transform: rotate(-5deg);
+    }
+}
+
+@media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+        display: none;
+        visibility: hidden;
+    }
+}
