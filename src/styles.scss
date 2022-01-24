@@ -1,7 +1,99 @@
-/* You can add global styles to this file, and also import other style files */
+@import "theme/variables.scss";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-list {
+    padding-top: 0 !important;
+
+    .mat-list-item {
+        height: 60px !important;
+    }
+}
+
+.noAvatarContainer,
+.avatarImage {
+    width: 48px !important;
+    height: 48px !important;
+    padding: 0 !important;
+}
+
+.noAvatarContainer {
+    background-color: var(--color-primary-tint);
+    border-radius: 50%;
+    display: flex;
+
+    span {
+        font-weight: bold;
+        font-size: 16px;
+        color: white;
+        margin: auto;
+    }
+}
+
+.buttonNormalSize,
+.callStatusIcon {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 18px !important;
+    mat-icon {
+        font-size: 28px;
+    }
+}
+
+.buttonCallInputSize.mat-icon-button {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 4px !important;
+    line-height: 0px !important;
+    mat-icon {
+        font-size: 24px;
+    }
+}
+
+.callButton {
+    color: $successColor !important;
+}
+
+.transferButton,
+.holdStatus {
+    color: $warningColor !important;
+    mat-icon {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+}
+
+.ongoingStatus,
+.closeDialerButton.icon-only {
+    color: $primaryColor;
+}
+
+.deleteButton,
+.hangupButton.icon-only {
+    color: $dangerColor;
+}
+
+.callButton:not(.mat-button-disabled):hover {
+    background-color: rgba($successColor, 0.1);
+}
+
+.closeDialerButton.icon-only:hover {
+    background-color: rgba($primaryColor, 0.1);
+}
+
+.transferButton:not(.mat-button-disabled):hover {
+    background-color: rgba($warningColor, 0.1);
+}
+
+.deleteButton:not(.mat-button-disabled):hover,
+.hangupButton.icon-only:hover {
+    background-color: rgba($dangerColor, 0.1);
+}
+
+.mat-button-disabled {
+    opacity: 0.5;
+}
 
 //angular material theming
 @import "~@angular/material/theming";

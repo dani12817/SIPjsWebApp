@@ -24,15 +24,13 @@
         height: 68px;
         top: 0;
         left: 68px;
-        border-bottom: 1px solid lightgray;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
+        background-color: #464775;
 
         .topbarTitle {
             margin: auto 1rem;
             font-size: 24px;
             font-weight: bold;
+            color: white;
         }
     }
 
@@ -41,36 +39,19 @@
         height: 100vh;
         top: 0;
         left: 0;
-        border-right: 1px solid lightgray;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
+        background-color: #313247;
 
         .noAvatarContainer,
         .avatarImage {
-            width: 52px;
-            height: 52px;
+            width: 52px !important;
+            height: 52px !important;
             margin: 0.5rem auto;
-        }
-
-        .noAvatarContainer {
-            background-color: var(--color-primary);
-            border-radius: 50%;
-            display: flex;
-
-            span {
-                font-weight: bold;
-                font-size: 16px;
-                color: white;
-                margin: auto;
-            }
         }
 
         .sideMenuItemsList {
             display: flex;
             flex-direction: column;
             height: calc(100vh - 68px);
-            padding-top: 0 !important;
             
             .mat-list-item {
                 text-decoration: none;
@@ -86,70 +67,50 @@
                     width: $icon-size;
                     height: $icon-size;
                     margin: 0 auto;
+                    color: white;
                 }
             }
 
             .mat-list-item:hover {
-                background-color: rgba(0, 0, 0, 0.1);
+                background-color: rgba(0, 0, 0, 0.4);
             }
 
             .mat-list-item.selected {
-                border-left: solid 8px var(--color-primary);
+                border-left: solid 8px var(--color-primary-tint);
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
         
                 mat-icon {
-                    color: var(--color-primary);
+                    color: var(--color-primary-tint);
                 }
             }
 
             .logOutItem {
                 margin-top: auto;
             }
-        
-            /*.mat-list-item.selected {
-                border-left: solid 8px var(--color-primary);
-        
-                mat-icon {
-                    color: var(--color-primary);
-                }
-            }
-        
-            .mat-list-item {
-                width: 100%;
-                --min-height: 80px;
-                --inner-border-width: 0;
-                --padding-start: 0;
-                --padding-end: 0;
-                --inner-padding-end: 0;
-            
-                mat-icon {
-                    $icon-size: 32px;
-                    font-size: $icon-size;
-                    width: $icon-size;
-                    height: $icon-size;
-                    //color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54);
-                    margin: auto;
-                }
-            }*/
         }
     }
 
     .routerOutletContainer {
-        background-color: sandybrown;
+        border-right: solid 1px lightgrey;
         width: 360px;
         height: calc(100vh - 68px);
         top: 68px;
         left: 68px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
     }
 
     .callContainer {
-        background-color: palevioletred;
+        // background-color: palevioletred;
         width: calc(100vw - 68px - 360px);
         height: calc(100vh - 68px);
         top: 68px;
         left: calc(68px + 360px);
     }
 }
-
 
 /* Responsive Styles */
 
