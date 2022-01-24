@@ -8,6 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list'; 
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button'; 
+
+import { MyContactsComponent } from '../app/components/my-contacts/my-contacts.component';
+import { CallLogComponent } from '../app/components/call-log/call-log.component';
+import { AllContactsComponent } from '../app/components/all-contacts/all-contacts.component';
+import { SettingsComponent } from '../app/components/settings/settings.component';
+import { ContactItemComponent } from './contact-item/contact-item.component';
 
 
 registerLocaleData(localeEs);
@@ -20,7 +27,8 @@ registerLocaleData(localeEs);
     BrowserAnimationsModule,
     MatGridListModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -28,10 +36,17 @@ registerLocaleData(localeEs);
     BrowserAnimationsModule,
     MatGridListModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule
   ],
   providers: [ ],
-  declarations: [ ],
+  declarations: [
+    MyContactsComponent,
+    CallLogComponent,
+    AllContactsComponent,
+    SettingsComponent,
+    ContactItemComponent
+  ],
   entryComponents: [ ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,0 +1,20 @@
+mat-list-item:hover {
+    background: #F5F5F5;
+}
+
+mat-list-item {
+    .nameContainer {
+        font-size: 14px;
+        font-weight: bold;
+        white-space: initial;
+    }
+
+    .usernameContainer {
+        font-size: 12px;
+        font-style: italic;
+    }
+
+    .extensionItemActions {
+        margin-left: auto;
+    }
+}

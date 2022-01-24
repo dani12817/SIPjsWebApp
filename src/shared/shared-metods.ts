@@ -3,7 +3,7 @@
  * @param name String usado para construir las siglas.
  * @return Siglas correspondientes al String pasado como parámetro.
  */
- export function buildCustomAvatar(name: string): string {
+ export function buildCustomAvatar(name: string | undefined): string {
     if (!name) {
         return " ";
     }
@@ -29,4 +29,13 @@
         }
         return initials;
     }
+}
+
+/**
+ * Comprueba si el navegador es Mozilla Firefox.
+ * @return Boolean con el resultado.
+ */
+export function isFirefox(): boolean {
+    const agent = window.navigator.userAgent.toLowerCase();
+    return agent.indexOf('firefox') > -1;
 }
