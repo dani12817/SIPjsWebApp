@@ -1,3 +1,5 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loadingServ.loading"></mat-progress-bar>
+
 <div class="appContainer">
     <div class="topbarContainer">
       <div class="topbarTitle">SIP.js WebApp</div>
@@ -19,7 +21,7 @@
         </mat-list>
     </div>
 
-    <div class="routerOutletContainer">
+    <div class="routerOutletContainer" [ngClass]="getRouterOutletClass()">
         <router-outlet></router-outlet>
     </div>
 

@@ -5,8 +5,13 @@ import { MyContactsComponent } from './components/my-contacts/my-contacts.compon
 import { SettingsComponent } from './components/settings/settings.component';
 import { AllContactsComponent } from './components/all-contacts/all-contacts.component';
 import { CallLogComponent } from './components/call-log/call-log.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: 'my-contacts',
     component: MyContactsComponent

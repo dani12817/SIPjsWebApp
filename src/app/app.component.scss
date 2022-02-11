@@ -7,6 +7,13 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+mat-progress-bar {
+    top: 0;
+    position: fixed;
+    left: 0;
+    z-index: 100;
+}
+
 .appContainer {
     width: 100vw;
     height: 100vh;
@@ -21,7 +28,7 @@
     .topbarContainer {
         display: flex;
         width: calc(100vw - 68px);
-        height: 68px;
+        height: 60px;
         top: 0;
         left: 68px;
         background-color: #464775;
@@ -43,9 +50,9 @@
 
         .noAvatarContainer,
         .avatarImage {
-            width: 52px !important;
-            height: 52px !important;
-            margin: 0.5rem auto;
+            /*width: 48px !important;
+            height: 48px !important;*/
+            margin: 6px auto;
         }
 
         .sideMenuItemsList {
@@ -92,22 +99,32 @@
         }
     }
 
-    .routerOutletContainer {
-        border-right: solid 1px lightgrey;
+    .routerOutletDefaultSize {
         width: 360px;
-        height: calc(100vh - 68px);
-        top: 68px;
+        height: calc(100vh - 60px);
+        top: 60px;
         left: 68px;
+        border-right: solid 1px lightgrey;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
 
+    .routerOutletFullSize {
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-image: url('/assets/img/login-background.jpg');
+        background-size: cover;
+        z-index: 10;
+    }
+
     .callContainer {
         // background-color: palevioletred;
         width: calc(100vw - 68px - 360px);
-        height: calc(100vh - 68px);
-        top: 68px;
+        height: calc(100vh - 60px);
+        top: 60px;
         left: calc(68px + 360px);
     }
 }

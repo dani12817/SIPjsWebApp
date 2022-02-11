@@ -1,0 +1,36 @@
+<div class="loginBody">
+    <mat-card class="loginContainer">
+        <img class="login-logo a-w-50 a-my-4" src="assets/img/logo.png">
+
+        <form class="loginEmail a-w-100" [formGroup]="loginForm.formGroup">
+            <mat-form-field appearance="outline" class="a-w-100">
+                <mat-label>E-mail</mat-label>
+                <input matInput type="email" formControlName="email" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="a-w-100">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password" formControlName="password" required>
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button class="a-w-100" color="accent" (click)="login(null)">Iniciar Sesión</button>
+        </form>
+
+        <div class="socialNetworkLogin a-w-70 a-grid-column a-mt-4">
+            <button mat-flat-button color="primary" class="a-grid-item a-w-100" (click)="login('google')">
+                <mat-icon svgIcon="google" class="a-mr-3"></mat-icon>
+                <span>Iniciar sesión con Google</span>
+            </button>
+
+            <button mat-flat-button color="primary" class="a-grid-item a-w-100" (click)="login('twitter')">
+                <mat-icon svgIcon="twitter" class="a-mr-3"></mat-icon>
+                <span>Iniciar sesión con Twitter</span>
+            </button>
+
+            <button mat-flat-button color="primary" class="a-grid-item a-w-100" (click)="login('facebook')">
+                <mat-icon class="a-mr-3">facebook</mat-icon>
+                <span>Iniciar sesión con Facebook</span>
+            </button>
+        </div>
+    </mat-card>
+</div>
