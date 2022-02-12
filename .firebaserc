@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sipjswebapp": {
+      "hosting": {
+        "SIPjsWebApp": [
+          "sipjswebapp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sipjswebapp"
+  }
+}

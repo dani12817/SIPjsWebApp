@@ -13,21 +13,25 @@
                 <input matInput type="password" formControlName="password" required>
             </mat-form-field>
 
-            <button type="submit" mat-raised-button class="a-w-100" color="accent" (click)="login(null)">Iniciar Sesión</button>
+            <div class="loginError a-mb-3" *ngIf="loginError != null">{{ loginError }}</div>
+
+            <button type="submit" mat-raised-button class="a-w-100" color="accent" (click)="login(null)" [disabled]="disabledLogin()">
+                Iniciar Sesión
+            </button>
         </form>
 
         <div class="socialNetworkLogin a-w-70 a-grid-column a-mt-4">
-            <button mat-flat-button color="primary" class="a-grid-item a-w-100" (click)="login('google')">
+            <button mat-flat-button color="primary" class="socialNetworkGoogle a-grid-item a-w-100" (click)="login('google')">
                 <mat-icon svgIcon="google" class="a-mr-3"></mat-icon>
                 <span>Iniciar sesión con Google</span>
             </button>
 
-            <button mat-flat-button color="primary" class="a-grid-item a-w-100" (click)="login('twitter')">
+            <button mat-flat-button color="primary" class="socialNetworkTwitter a-grid-item a-w-100" (click)="login('twitter')">
                 <mat-icon svgIcon="twitter" class="a-mr-3"></mat-icon>
                 <span>Iniciar sesión con Twitter</span>
             </button>
 
-            <button mat-flat-button color="primary" class="a-grid-item a-w-100" (click)="login('facebook')">
+            <button mat-flat-button color="primary" class="socialNetworkFacebook a-grid-item a-w-100" (click)="login('facebook')">
                 <mat-icon class="a-mr-3">facebook</mat-icon>
                 <span>Iniciar sesión con Facebook</span>
             </button>

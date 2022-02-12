@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    projectId: 'sipjswebapp',
+    appId: '1:1094248150349:web:c7351c4d63bb179feeb304',
+    storageBucket: 'sipjswebapp.appspot.com',
+    apiKey: 'AIzaSyCstMJ-PzZGw_QKH1b5pplfUk43Ib4I3jw',
+    authDomain: 'sipjswebapp.firebaseapp.com',
+    messagingSenderId: '1094248150349',
+    measurementId: 'G-VD1HDRNYJV',
+  }
 };
 
 /*
