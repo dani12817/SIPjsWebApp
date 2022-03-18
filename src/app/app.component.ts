@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 import { LoadingService } from './services/loading.service';
+import { AuthService } from './services/auth.service';
 
 import { buildCustomAvatar } from '../shared/shared-metods';
 
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit {
 
   buildCustomAvatar = buildCustomAvatar;
 
-  constructor(private router: Router, public loadingServ: LoadingService) { }
+  constructor(private router: Router, public loadingServ: LoadingService, private authServ: AuthService) { }
 
   ngOnInit() {
     this.router.events.subscribe((route: any) => {
@@ -48,5 +49,11 @@ export class AppComponent implements OnInit {
       default:
         return 'routerOutletDefaultSize';
     }
+  }
+
+  logOut(): void {
+    this.loadingServ.loading = true;
+    this.authServ.logOut();
+    this.router.navigate(['/login']);
   }
 }

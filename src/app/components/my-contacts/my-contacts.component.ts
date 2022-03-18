@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from '../../models/contact';
+import { MyContactsService } from '../../services/myContacts.service';
 
 @Component({
   selector: 'app-my-contacts',
@@ -8,36 +9,14 @@ import { Contact } from '../../models/contact';
 })
 export class MyContactsComponent implements OnInit {
 
-  myContacts: Contact[] = [
-    {      
-      name: "Daniel Leal perez",
-      username: "dani12817"
-    },
-    {      
-      name: "Lucia Tortosa",
-      username: "kitsuneYuu"
-    },
-    {      
-      name: "Juan Carlos Jimenez",
-      username: "pinaCastalla"
-    },
-    {      
-      name: "Rafal Padarowski",
-      username: "polaco"
-    },
-    {      
-      name: "Oscar Vicent Soriano",
-      username: "oscarHak"
-    },
-    {      
-      name: "Ionud Claudi Badea",
-      username: "johnny"
-    }
-  ];
+  myContacts: Contact[] = [];
 
-  constructor() { }
+  constructor(private myContactsServ: MyContactsService) { }
 
   ngOnInit(): void {
+    this.myContactsServ.getMyContacts().then(res => {
+      this.myContacts = res;
+    })
   }
 
 }
