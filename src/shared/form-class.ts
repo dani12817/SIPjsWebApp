@@ -20,7 +20,7 @@ export class FormClass {
   /**
    * Comprueba si el campo del formulario pasado como parámetro tiene algún error según sus Validators.
    * @param {string} field Campo del formulario a comprobar.
-   * @return {string} String con el error que tiene el campo pasado como parámetro.
+   * @return {string} string con el error que tiene el campo pasado como parámetro.
    */
   hasError(field: string): string | boolean {
     if (this.formGroup.get(field).errors !== undefined && this.formGroup.get(field).errors !== null) {
@@ -37,7 +37,7 @@ export class FormClass {
    * @param {string} formArray FormArray a comprobar.
    * @param {number} index Índice del FormArray a comprobar.
    * @param {string} field Campo del FormArray a comprobar.
-   * @return {string} String con el error que tiene el campo pasado como parámetro.
+   * @return {string} string con el error que tiene el campo pasado como parámetro.
    */
   arrayHasError(formArray: string, index: number, field: string): string | boolean {
     let fieldControl: AbstractControl = (this.formGroup.get(formArray) as FormArray).at(index).get(field);

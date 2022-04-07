@@ -1,7 +1,7 @@
 /**
  * Prepara la siglas a mostrar dentro del recuadro del Avatar.
- * @param name String usado para construir las siglas.
- * @return Siglas correspondientes al String pasado como parámetro.
+ * @param name string usado para construir las siglas.
+ * @return Siglas correspondientes al string pasado como parámetro.
  */
  export function buildCustomAvatar(name: string | undefined): string {
     if (!name) {

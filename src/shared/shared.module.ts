@@ -23,6 +23,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar'; 
 
 import { MyContactsComponent } from '../app/components/my-contacts/my-contacts.component';
 import { CallLogComponent } from '../app/components/call-log/call-log.component';
@@ -30,6 +31,9 @@ import { AllContactsComponent } from '../app/components/all-contacts/all-contact
 import { SettingsComponent } from '../app/components/settings/settings.component';
 import { ContactItemComponent } from './contact-item/contact-item.component';
 import { LoginComponent } from '../app/components/login/login.component';
+import { RegisterComponent } from '../app/components/register/register.component';
+
+import { AddContactDialog } from '../app/dialogs/add-contact-dialog.component';
 
 
 registerLocaleData(localeEs);
@@ -47,7 +51,9 @@ registerLocaleData(localeEs);
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule,
+    MatToolbarModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -60,7 +66,9 @@ registerLocaleData(localeEs);
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule,
+    MatToolbarModule
   ],
   providers: [ ],
   declarations: [
@@ -69,9 +77,11 @@ registerLocaleData(localeEs);
     CallLogComponent,
     AllContactsComponent,
     SettingsComponent,
-    ContactItemComponent
+    ContactItemComponent,
+    RegisterComponent,
+    AddContactDialog
   ],
-  entryComponents: [ ],
+  entryComponents: [AddContactDialog],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModule {

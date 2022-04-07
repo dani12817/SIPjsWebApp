@@ -5,22 +5,27 @@
 
   <div mat-line class="nameContainer">{{ contact.name }}</div>
   <div mat-line class="usernameContainer">{{ contact.username }}</div>
-  <!-- <ion-label>
-    <div class="nameContainer">{{ contact.name }}</div>
-    <div class="usernameContainer">{{ contact.username }}</div>
-  </ion-label> -->
 
   <div class="extensionItemActions">
     <!-- <ng-container *ngIf="!siptizeServ.transferMode; else elseTransfer"> -->
-    <ng-container *ngIf="true; else elseTransfer">
-      <button mat-icon-button class="callButton buttonNormalSize" title="Llamar" (click)="callExtension()" [disabled]="cannotCall()">
+    <ng-container *ngIf="true && !showAddContact">
+      <button mat-icon-button class="callButton buttonNormalSize" matTooltip="Llamar" (click)="callExtension()" [disabled]="cannotCall()">
         <mat-icon>call</mat-icon>
       </button>
     </ng-container>
-    <ng-template #elseTransfer>
-      <button mat-icon-button class="transferButton buttonNormalSize" title="Transferencia Ciega" (click)="transferCall()" [disabled]="cannotCall()">
+
+    <ng-container *ngIf="false && !canAddContact">
+      <button mat-icon-button class="transferButton buttonNormalSize" matTooltip="Transferencia Ciega" (click)="transferCall()" [disabled]="cannotCall()">
         <mat-icon>keyboard_return</mat-icon>
       </button>
-    </ng-template>
+    </ng-container>
+    
+    <ng-container *ngIf="showAddContact">
+      <button mat-icon-button class="addContactButton buttonNormalSize" matTooltip="Añadir a Contactos" (click)="openAddContactDialog()" [disabled]="!canAddContact">
+        <mat-icon>add_ic_call</mat-icon>
+      </button>
+    </ng-container>
   </div>
 </mat-list-item>
+
+<mat-divider></mat-divider>

@@ -1,0 +1,41 @@
+<div class="registerBody">
+    <mat-card class="registerContainer a-flex a-flex-column">
+        <img class="login-logo a-w-50 a-my-4 a-mx-auto" src="assets/img/logo.png">
+
+        <form class="registerForm a-grid" [formGroup]="registerForm.formGroup">
+            <mat-form-field appearance="outline" class="a-w-100 a-pb-1">
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text" formControlName="name" required>
+                <mat-error fxShow="registerFrom.hasError('name')">{{ registerForm.hasError('name') }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="a-w-50 a-pb-1">
+                <mat-label>Username</mat-label>
+                <input matInput type="text" formControlName="username" required>
+                <mat-error fxShow="registerFrom.hasError('username')">{{ registerForm.hasError('username') }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="a-w-50 a-pb-1">
+                <mat-label>E-mail</mat-label>
+                <input matInput type="email" formControlName="email" required>
+                <mat-error fxShow="registerFrom.hasError('email')">{{ registerForm.hasError('email') }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="a-w-50 a-pb-1">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password" formControlName="password" required>
+                <mat-error fxShow="registerFrom.hasError('password')">{{ registerForm.hasError('password') }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="a-w-50 a-pb-1">
+                <mat-label>Repetir Contraseña</mat-label>
+                <input matInput type="password" formControlName="repeatPassword" required>
+                <mat-error fxShow="registerFrom.hasError('repeatPassword')">{{ registerForm.hasError('repeatPassword') }}</mat-error>
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button class="a-w-100 a-mx-auto" color="accent" (click)="register()" [disabled]="disableRegister()">
+                Registrarse
+            </button>
+        </form>
+    </mat-card>
+</div>

@@ -1,1 +1,7 @@
-<p>all-contacts works!</p>
+<div class="myContactsContianer">
+    <mat-list class="myContactsList">
+      <ng-container *ngFor="let contact of allContacts">
+        <app-contact-item [contact]="contact" [canAddContact]="!isInMyContactList(contact)" [showAddContact]="true" *ngIf="!isMe(contact)"></app-contact-item>
+      </ng-container>      
+    </mat-list>
+</div>

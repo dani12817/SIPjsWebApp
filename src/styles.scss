@@ -69,34 +69,40 @@ mat-list {
 }
 
 .ongoingStatus,
+.addContactButton,
 .closeDialerButton.icon-only {
-    color: $primaryColor;
+    color: $primaryColor !important;
 }
 
 .deleteButton,
 .hangupButton.icon-only {
-    color: $dangerColor;
+    color: $dangerColor !important;
 }
 
 .callButton:not(.mat-button-disabled):hover {
-    background-color: rgba($successColor, 0.1);
+    background-color: rgba($successColor, 0.1) !important;
 }
 
-.closeDialerButton.icon-only:hover {
-    background-color: rgba($primaryColor, 0.1);
+.closeDialerButton.icon-only:hover,
+.addContactButton:hover {
+    background-color: rgba($primaryColor, 0.1) !important;
 }
 
 .transferButton:not(.mat-button-disabled):hover {
-    background-color: rgba($warningColor, 0.1);
+    background-color: rgba($warningColor, 0.1) !important;
 }
 
 .deleteButton:not(.mat-button-disabled):hover,
 .hangupButton.icon-only:hover {
-    background-color: rgba($dangerColor, 0.1);
+    background-color: rgba($dangerColor, 0.1) !important;
 }
 
 .mat-button-disabled {
     opacity: 0.5;
+}
+
+.mat-dialog-container {
+    padding: 0 !important;
 }
 
 //angular material theming

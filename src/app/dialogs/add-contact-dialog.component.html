@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" class="mat-elevation-z1">
+    <mat-toolbar-row>
+        <div class="dialog-toolbar-title a-mr-auto">Añadir Contacto</div>
+
+        <button mat-icon-button class="menu-button" mat-dialog-close><mat-icon>close</mat-icon></button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-dialog-content class="a-px-3 a-pt-3 a-m-0">
+    <form class="a-w-100" [formGroup]="newContactForm.formGroup">
+        <mat-form-field appearance="outline" class="a-w-100">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" formControlName="username" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="a-w-100">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" formControlName="name" required>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="a-px-3 a-m-0">
+    <button mat-raised-button color="primary" class="a-w-100" (click)="saveNewContact()" [disabled]="disableSave()">Guardar</button>
+</mat-dialog-actions>

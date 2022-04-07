@@ -12,14 +12,14 @@ import { buildCustomAvatar } from '../shared/shared-metods';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  sideMenuItems: { icon: String, name: String, route: String[] }[] = [
-    { icon: "contacts", name: "Mi Lista", route: ["/my-contacts"] },
+  sideMenuItems: { icon: string, name: string, route: string[] }[] = [
+    { icon: "contacts", name: "Mis Contactos", route: ["/my-contacts"] },
     { icon: "contact_phone", name: "Registro de Llamadas", route: ["/call-log"] },
     { icon: "import_contacts", name: "Todos los Contactos", route: ["/all-contacts"] },
     { icon: "settings", name: "Configuración", route: ["/settings"] }
   ];
 
-  currentUrl: String;
+  currentUrl: string;
 
   buildCustomAvatar = buildCustomAvatar;
 
@@ -44,6 +44,7 @@ export class AppComponent implements OnInit {
       case undefined:
       case '':
       case '/login':
+      case '/register':
       case '/error':
         return 'routerOutletFullSize';
       default:

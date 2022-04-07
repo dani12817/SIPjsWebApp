@@ -1,4 +1,4 @@
-import { UserCredential } from "firebase/auth";
+import { UserData } from './user-data';
 
 export class User {
     uid: string;
@@ -6,11 +6,14 @@ export class User {
     displayName: string;
     photoURL: string;
     emailVerified: boolean;
+    username: string;
 
-    constructor(userData: firebase.default.User) {
-        this.email = userData.uid;
-        this.displayName = userData.displayName;
+    constructor(userData: firebase.default.User, firebaseUser: UserData) {
+        this.uid = userData.uid;
+        this.email = userData.email;
+        this.displayName = firebaseUser.name;
         this.photoURL = userData.photoURL;
         this.emailVerified = userData.emailVerified;
+        this.username = firebaseUser.username;
     }
  }

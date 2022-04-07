@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Contact } from '../../models/contact';
-import { MyContactsService } from '../../services/myContacts.service';
+import { ContactsService } from '../../services/contacts.service';
 
 @Component({
   selector: 'app-my-contacts',
@@ -11,12 +12,10 @@ export class MyContactsComponent implements OnInit {
 
   myContacts: Contact[] = [];
 
-  constructor(private myContactsServ: MyContactsService) { }
+  constructor(private route: ActivatedRoute, private myContactsServ: ContactsService) { }
 
   ngOnInit(): void {
-    this.myContactsServ.getMyContacts().then(res => {
-      this.myContacts = res;
-    })
+    this.myContacts = this.route.snapshot.data.contactList;
   }
 
 }

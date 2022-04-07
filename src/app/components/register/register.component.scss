@@ -1,0 +1,15 @@
+.registerBody {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    place-content: center;
+    align-items: center;
+
+    .registerContainer {
+        max-width: 720px;
+
+        button {
+            max-width: 320px;
+        }
+    }
+}

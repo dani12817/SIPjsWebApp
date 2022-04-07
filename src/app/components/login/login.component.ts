@@ -14,7 +14,7 @@ import { FormClass } from '../../../shared/form-class';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormClass;
-  loginError: String;
+  loginError: string;
 
   constructor(private router: Router, private _authServ: AuthService, private loadingServ: LoadingService) { }
 

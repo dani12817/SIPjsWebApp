@@ -1,6 +1,11 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+
 import { buildCustomAvatar } from '../shared-metods';
+
 import { Contact } from '../../app/models/contact';
+import { AddContactDialog } from '../../app/dialogs/add-contact-dialog.component';
+import { UserData } from '../../app/models/user-data';
 
 @Component({
   selector: 'app-contact-item',
@@ -9,9 +14,13 @@ import { Contact } from '../../app/models/contact';
 })
 export class ContactItemComponent {
   @Input() contact: Contact;
+
+  @Input() showAddContact: boolean = false;
+  @Input() canAddContact: boolean = false;
+  
   buildCustomAvatar = buildCustomAvatar;
 
-  constructor(/*public siptizeServ: SiptizePhoneService, private _userLocalServ: UserLocalStorageService, private _notiToastServ: NotifyToastService*/) { }
+  constructor(private dialog: MatDialog/*public siptizeServ: SiptizePhoneService, private _userLocalServ: UserLocalStorageService, private _notiToastServ: NotifyToastService*/) { }
 
   callExtension() {
     /*if (this.siptizeServ.calling || this.siptizeServ.inCall) {
@@ -32,5 +41,13 @@ export class ContactItemComponent {
 
   transferCall() {
     //this.siptizeServ.transfer(this.extension.username);
+  }
+
+  openAddContactDialog(): void {
+    let config: MatDialogConfig = {
+      width: "320px",
+      data: this.contact
+    };
+    this.dialog.open(AddContactDialog, config);
   }
 }
